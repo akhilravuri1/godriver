@@ -1,0 +1,19 @@
+// +build !windows
+package api
+
+//#include<sqlcli.h>
+import "C"
+
+const (
+	SQL_NULL_HANDLE       = uintptr(C.SQL_NULL_HANDLE)
+	SQL_HANDLE_ENV        = C.SQL_HANDLE_ENV
+	SQL_SUCCESS           = C.SQL_SUCCESS
+	SQL_SUCCESS_WITH_INFO = C.SQL_SUCCESS_WITH_INFO
+)
+
+type (
+	SQLHENV     C.SQLHENV
+	SQLSMALLINT C.SQLSMALLINT
+	SQLHANDLE   C.SQLHANDLE
+	SQLRETURN   C.SQLRETURN
+)
